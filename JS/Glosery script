@@ -1,0 +1,153 @@
+<script>
+   // Select DOM elements
+const groceryForm = document.querySelector(".grocery-form");
+const groceryInput = document.getElementById("grocery-input");
+const groceryList = document.getElementById("grocery-list");
+const clearBtn = document.getElementById("clear-btn");
+
+// Variables for managing the list
+let groceryItems = [];
+let currentId = 1;
+
+// Event listeners
+groceryForm.addEventListener("submit", handleFormSubmit);
+clearBtn.addEventListener("click", clearAllItems);
+
+// Handle form submission
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const groceryValue = groceryInput.value.trim();
+    
+    if (groceryValue !== "") {
+        addItem(groceryValue);
+        groceryInput.value = ""; // Clear input field after adding item
+    }
+}
+
+// Add item to the list
+function addItem(value) {
+    // Create a list item element
+    const listItem = document.createElement("li");
+    listItem.className = "grocery-item";
+    listItem.dataset.id = currentId;
+    
+    // Create a container for the item text and buttons
+    const itemContainer = document.createElement("div");
+    itemContainer.className = "item-container";
+    
+    // Create a span element for the item text
+    const itemText = document.createElement("span");
+    itemText.className = "item-text";
+    itemText.textContent = `${currentId}. ${value}`;
+    
+    // Make the text content editable when editing
+    itemText.contentEditable = "false";
+    
+    // Append the item text to the item container
+    itemContainer.appendChild(itemText);
+    
+    // Create edit and delete buttons
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit-btn";
+    editBtn.innerHTML = '<i class="fa fa-pencil"></i>'; // Pencil icon for edit
+    editBtn.addEventListener("click", () => editItem(itemText));
+    itemContainer.appendChild(editBtn);
+    
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "delete-btn";
+    deleteBtn.innerHTML = '<i class="fa fa-trash"></i>'; // Trash icon for delete
+    deleteBtn.addEventListener("click", () => deleteItem(listItem));
+    itemContainer.appendChild(deleteBtn);
+    
+    // Append the item container to the list item
+    listItem.appendChild(itemContainer);
+    
+    // Add list item to the grocery list
+    groceryList.appendChild(listItem);
+    
+    // Add item to the grocery items array
+    groceryItems.push({ id: currentId, value });
+    
+    // Increment the current ID for the next item
+    currentId++;
+    
+    // Show the clear button if there are items in the list
+    if (groceryItems.length > 0) {
+        clearBtn.style.display = "block";
+    }
+}
+
+// Edit an item in the list
+function editItem(itemText) {
+    // Enable content editing
+    itemText.contentEditable = "true";
+    // Focus on the text to start editing
+    itemText.focus();
+    
+    // When editing is done, disable content editing and update the item
+    itemText.addEventListener("blur", () => {
+        // Disable editing
+        itemText.contentEditable = "false";
+        // Find the item index in the grocery items array
+        const itemId = parseInt(itemText.parentElement.parentElement.dataset.id);
+        const itemIndex = groceryItems.findIndex(item => item.id === itemId);
+        // Update the item value in the grocery items array
+        groceryItems[itemIndex].value = itemText.textContent.split(". ")[1];
+    });
+}
+
+// Delete an item from the list
+function deleteItem(listItem) {
+    // Remove the list item element from the grocery list
+    groceryList.removeChild(listItem);
+    
+    // Remove the item from the grocery items array
+    const itemIndex = groceryItems.findIndex(item => item.id == listItem.dataset.id);
+    groceryItems.splice(itemIndex, 1);
+    
+    // Update serial numbers for remaining items
+    updateSerialNumbers();
+    
+    // If there are no more items in the list, hide the clear button
+    if (groceryItems.length === 0) {
+        clearBtn.style.display = "none";
+    }
+}
+
+// Update the serial numbers of the remaining items
+function updateSerialNumbers() {
+    // Iterate through each list item and update the serial number
+    const listItems = groceryList.children;
+    
+    for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        const itemContainer = listItem.querySelector(".item-container");
+        const itemText = itemContainer.querySelector(".item-text");
+        
+        // Update the text with the new serial number
+        itemText.textContent = `${i + 1}. ${groceryItems[i].value}`;
+        
+        // Update the dataset ID of the list item
+        listItem.dataset.id = i + 1;
+        
+        // Update the grocery items array with the new ID
+        groceryItems[i].id = i + 1;
+    }
+}
+
+// Clear all items from the list
+function clearAllItems() {
+    // Clear the grocery list
+    groceryList.innerHTML = "";
+    
+    // Reset the grocery items array and current ID
+    groceryItems = [];
+    currentId = 1;
+    
+    // Hide the clear button
+    clearBtn.style.display = "none";
+}
+
+
+    </script>

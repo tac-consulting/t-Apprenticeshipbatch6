@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceryform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/Glosery styles.css">
+    <script src="/JS/Glosery script"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="grocery-form">
+            <h1>Grocery List</h1>
+            <div class="input-container">
+                <input type="text" id="grocery-input" placeholder="e.g. eggs" required>
+                <button type="submit" class="submit-btn">Add Item</button>
+            </div>
+        </form>
+        <div id="grocery-list-container" style="background-color: rgb(248, 232, 232);">
+            <ul id="grocery-list"></ul>
+            <button id="clear-btn" class="clear-btn">Clear Items</button>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>

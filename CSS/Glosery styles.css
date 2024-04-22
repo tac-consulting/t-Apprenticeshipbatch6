@@ -1,0 +1,139 @@
+
+/* Base styling */
+body {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grocery-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+#groceries-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+}
+
+.submit-btn {
+    padding: 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+#grocery-list-container {
+    height: 200px;
+    overflow-y: auto;
+    background-color: rgb(248, 232, 232);
+}
+
+#grocery-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.grocery-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.item-text-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    color: #4caf50;
+}
+
+
+        /* Media Queries */
+@media (max-width: 768px) {
+    /* Styles for tablets and smaller devices */
+    .Containerer {
+        width: 90%;
+        margin: 20px;
+    }
+    .placeholder input, .placeholder button {
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    .del-btn, .edit-btn {
+        margin-left: 20px;
+        top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Styles for smartphones and smaller devices */
+    .Containerer {
+        width: 100%;
+        margin: 10px;
+    }
+    .placeholder {
+        flex-direction: column;
+    }
+    .del-btn, .edit-btn {
+        display: block;
+        margin: 10px auto;
+    }
+}
