@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.slide-container{
+  background-color: ghostwhite;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  row-gap: 30px;
+   overflow: visible;
+}
+section{
+  width: 800px;
+max-width: var(--fixed-width);
+height: 800px;
+margin: 0 auto;
+margin-top: 5rem;
+text-align: center;
+position: relative;
+padding: 1rem,0;
+}
+.slash{
+  color: blue;
+  padding-right:4px
+}
+.reviews{
+  color: rgb(23, 24, 26);
+}
+.rightarrow {
+  cursor: pointer;
+  height: 20px;
+  width: 30px;
+  left: -5rem;
+  border: 2px solid #837e7e;
+
+
+}
+.slide-active{
+  opacity: 1;
+  transform: translate(0);
+  display: block;
+}
+.leftarrow{
+  cursor: pointer;
+  right: -5rem;
+  height: 20px;
+  width: 30px;
+  transform: rotate(180deg);
+  border: 2px solid #837e7e;
+ 
+
+
+}
+
+.image{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #928e8e;
+  /* background: var(--clr-white); */
+  padding: 3px;
+  border-radius: 50%;
+  box-shadow: 2px,2px,lightblue;
+  
+}
+.image.hover{
+  opacity: 0.8;
+}
+.name{
+  color: cadetblue;
+  font-size: 120%;
+  margin-bottom: 10px;
+}
+.job{
+  color: #928e8e;
+  margin-bottom: 10px;
+   
+
+
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 20%;
+  
+}
+p{
+  text-align: center;
+  padding: 0 80px;
+  font-size: 14px;
+   font-weight: 500;
+   color: #333;
+   object-fit: cover;
+   display: block;
+}
+.quote-icon{
+  font-size: 30px;
+  color: rgb(37, 159, 163);
+  text-align: center;
+  padding: 50px;
+  justify-content: center;
+}
+.slides{
+  display: flex;
+   overflow: visible;
+   align-items: center;
+   width: calc(100% * NUMBER_OF_SLIDES);
+   /* width: 100; */
+  transition: opacity 0.3s ease-in-out;
+  transition: transform;
+}
+
+
+
+
+
+
+article{
+  width: 100%;
+}
+
+
+
+
