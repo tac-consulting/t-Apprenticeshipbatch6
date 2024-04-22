@@ -1,0 +1,170 @@
+/* Your existing CSS styles here */
+
+/* Styles for hamburger menu */
+.hamburger-menu {
+    display: none; /* Initially hide the hamburger menu on larger screens */
+    cursor: pointer;
+  }
+  
+  .hamburger-menu .line {
+    width: 30px;
+    height: 3px;
+    background-color: #c59d5f;
+    margin: 4px 0;
+  }
+  
+  /* Styles for menu links */
+  .bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  
+  /* Show hamburger menu on smaller screens */
+  @media screen and (max-width: 768px) {
+    .bar {
+      display: none; /* Hide the menu links on smaller screens */
+    }
+  
+    .hamburger-menu {
+      display: block; /* Show the hamburger menu on smaller screens */
+    }
+    
+    
+    .bar.open {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  body {
+    /* font-family: "work sans"; */
+    background: rgba(43, 42, 42, 0.7) url('food.jpg') center center fixed;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    margin: 1px;
+    padding: 1px;
+    
+}
+
+.container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+header {
+    
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 2%;
+}
+
+.bar a{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 7px;
+    text-decoration: none;
+    color: #c59d5f;
+    
+}
+
+
+.bar button {
+    background-color: white;
+    border: 1px solid #c59d5f;
+    border-radius: 5px;
+    border-width: 2px;
+    color: #c59d5f;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.bar button:hover
+{
+    /* background-color: #c59d5f; */
+   background-color:rgb(211, 169, 92);
+    color:white;
+    transform: translateY(-10px);;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+}
+.bar a:hover
+{
+    color:white;
+    transition: 0.4s;
+
+}
+
+.items {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    border: 2px solid  #c59d5f;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 35%;
+    
+
+    
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    
+
+
+}
+
+
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.name h3 {
+    margin: 0;
+}
+
+hr {
+    border: dotted 1px;
+    border-top: 1.2px solid #ddd ;
+    width: 100%;
+    margin: 20px 0;
+}
+.dinner1{
+    height:140%;
+    width:100%;
+    border-radius:5%;
+
+    
+}
+
+  

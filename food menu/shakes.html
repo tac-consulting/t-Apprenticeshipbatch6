@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Menu</h1>
+            <!-- Hamburger menu icon -->
+            <div class="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <!-- Menu links -->
+            <div class="bar">
+                <button type="submit"><a href="all.html">All</a></button>
+                <button type="submit"><a href="Breakfast.html">Breakfast</a></button>
+                <button type="submit"><a href="Lunch.html">Lunch</a></button>
+                <button type="submit"><a href="shakes.html">Shakes</a></button>
+                <button type="submit"><a href="Dinner.html">Dinner</a></button>
+            </div>
+        </header>
+        <!-- Rest of your HTML code -->
+        <section>
+            <div class="items">
+                <div class="item">
+                    <img src="shakes-1.jpeg" alt="">
+                    <div class="name">
+                        <h3>Godzilla milkshake</h3>
+                        <h3>$6.99</h3>
+                    </div>
+                    <hr>
+                    <p>Ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold organic viral.</p>
+                    
+                </div>
+                <div class="item">
+                    <img src="shakes-3.jpeg" alt="">
+                    <div class="name">
+                        <h3>Oreo Dream</h3>
+                        <h3>$18.99</h3>
+                    </div>
+                    <hr>
+                    <p>Portland chicharrones ethical edison bulb,palo santo craft beer chia heirloom iphone everday</p>
+                    
+                </div>
+                <div class="item">
+                    <img src="shakes-2.jpeg" alt="">
+                    <div class="name">
+                        <h3>Quarantine Buddy</h3>
+                        <h3>$16.99</h3>
+                    </div>
+                    <hr>
+                    <p>Skateboard fam synth authentic semisotics.Live-edge lyft af, esison bulb yuccie crucifix microdosing.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript code
+        // Select the hamburger menu element
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        // Select the menu links element
+        const menuLinks = document.querySelector('.bar');
+
+        // Add a click event listener to toggle the visibility of menu links
+        hamburgerMenu.addEventListener('click', () => {
+            menuLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
